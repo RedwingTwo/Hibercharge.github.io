@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hibercharge</title>
     <style>
-        /* Reset margins and set full screen height */
         * {
             margin: 0;
             padding: 0;
@@ -15,15 +14,14 @@
         body, html {
             height: 100%;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #1a1a2e; /* Dark fallback background color */
+            background-color: #1a1a2e;
+            overflow: hidden;
         }
 
-        /* Hero container with a direct link to a free hibernating bear image */
         .hero-container {
             position: relative;
             height: 100vh;
             width: 100%;
-            /* This is a working, free-to-use CDN link of a bear sleeping */
             background-image: url('https://unsplash.com');
             background-size: cover;
             background-position: center;
@@ -33,7 +31,6 @@
             justify-content: center;
         }
 
-        /* Dark overlay to make sure the white text stands out against the bear image */
         .overlay {
             position: absolute;
             top: 0;
@@ -44,7 +41,6 @@
             z-index: 1;
         }
 
-        /* Content wrapper positioned above the dark mask */
         .content {
             position: relative;
             z-index: 2;
@@ -54,45 +50,68 @@
             padding: 0 20px;
         }
 
-        /* Main Heading Styling */
         h1 {
             font-size: 4rem;
             font-weight: 800;
             letter-spacing: 2px;
             text-transform: uppercase;
             margin-bottom: 20px;
-            color: #ffffff;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
         }
 
-        /* Slogan Text Styling */
         p {
             font-size: 1.8rem;
             font-weight: 400;
             line-height: 1.5;
+            margin-bottom: 40px;
             text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8);
         }
 
-        /* Mobile Optimization */
+        /* Interactive Action Button */
+        .charge-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            background-color: #e11d48; /* Crimson alert red */
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(225, 29, 72, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .charge-btn:hover {
+            background-color: #be123c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(225, 29, 72, 0.6);
+        }
+
+        .charge-btn:active {
+            transform: translateY(1px);
+        }
+
         @media (max-width: 600px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            p {
-                font-size: 1.3rem;
-            }
+            h1 { font-size: 2.5rem; }
+            p { font-size: 1.3rem; margin-bottom: 30px; }
+            .charge-btn { padding: 12px 30px; font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
     <div class="hero-container">
-        <!-- The dark overlay ensures text contrast against the background image -->
         <div class="overlay"></div>
         
         <div class="content">
             <h1>Hibercharge</h1>
             <p>"Don't die in your sleep" hibercharge will save your life.</p>
+            <!-- Link navigating directly to death.html -->
+            <a href="death.html" class="charge-btn">Check Battery Status</a>
         </div>
     </div>
 
